@@ -56,7 +56,7 @@ def main():
         "dog", "frog", "horse", "ship", "truck"
     ]
 
-    for exp in EXPERIMENTS:
+    for exp in TESTS:
         print("=" * 70)
         print(f"Experimento: {exp['name']}")
 
