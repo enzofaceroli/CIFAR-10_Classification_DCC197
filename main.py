@@ -1,14 +1,12 @@
-# main.py
-
 import torch
 import torch.nn as nn
 import torch.optim as optim
 
 from data_loader.cifar10 import get_cifar10_loaders
-from test import TESTS
+from tests import TESTS
 
 from models.resnet50_transfer import build_resnet50
-from models.vgg16_transfer import build_vgg16
+from models.vgg16_transfer import build_vgg16_transfer
 from models.densenet121_transfer import build_densenet121
 from models.vgg16_manual import VGG16Custom
 
@@ -28,7 +26,7 @@ def get_model(exp_config, num_classes):
         )
 
     if model_name == "vgg16":
-        return build_vgg16(
+        return build_vgg16_transfer(
             num_classes=num_classes,
             pretrained=True,
             freeze_features=exp_config["freeze_features"]
