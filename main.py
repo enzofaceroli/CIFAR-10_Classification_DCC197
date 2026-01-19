@@ -3,7 +3,14 @@ import torch.nn as nn
 import torch.optim as optim
 
 from data_loader.cifar10 import get_cifar10_loaders
-from tests import TESTS
+
+from tests.vgg16_tests import VGG16_TESTS 
+from tests.vgg16_manual_tests import VGG16_MANUAL_TESTS 
+from tests.resnet50_tests import RESNET50_TESTS 
+from tests.densenet121_tests import DENSENET121_TESTS 
+
+# ESCOLHER TESTES AQUI
+TESTS = VGG16_TESTS
 
 from models.resnet50_transfer import build_resnet50
 from models.vgg16_transfer import build_vgg16_transfer
@@ -14,8 +21,7 @@ from utils.train import train_model
 from utils.evaluate import evaluate_model
 from utils.plots import plot_confusion_matrix
 from utils.logger import log_test
-import os
-
+# import os
 
 def get_model(exp_config, num_classes):
     model_name = exp_config["model"]

@@ -2,7 +2,7 @@ import torch.nn as nn
 from torchvision.models import resnet50, ResNet50_Weights
 
 def build_resnet50(num_classes = 10, pretrained = True, freeze_backbone = True):
-    model = resnet50(weights = ResNet50_Weights.DEFAULT)
+    model = resnet50(weights =  ResNet50_Weights.DEFAULT)
     
     if freeze_backbone:
         for param in model.parameters():
