@@ -8,7 +8,7 @@ IMAGENET_STD = [0.229, 0.224, 0.225]
 def get_cifar10_loaders(batch_size, augment=False):
     if augment:
         train_transform = transforms.Compose([
-            transforms.resize((224, 224)),
+            transforms.Resize((224, 224)),
             transforms.RandomHorizontalFlip(),            
             transforms.RandomCrop(224, padding=4),
             transforms.ToTensor(),
@@ -17,13 +17,13 @@ def get_cifar10_loaders(batch_size, augment=False):
     
     else:
         train_transform = transforms.Compose([
-            transforms.resize((224, 224)),
+            transforms.Resize((224, 224)),
             transforms.ToTensor(),
             transforms.normalize(IMAGENET_MEAN, IMAGENET_STD)
         ])
         
     test_transform = transforms.Compose([
-        transforms.resize((224, 224)),
+        transforms.Resize((224, 224)),
         transforms.ToTensor(),
         transforms.normalize(IMAGENET_MEAN, IMAGENET_STD)
     ])
