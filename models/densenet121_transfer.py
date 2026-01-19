@@ -1,8 +1,8 @@
 import torch.nn as nn
-from torchvision import models
+from torchvision.models import densenet121, DenseNet121_Weights
 
 def build_densenet121(num_classes = 10, pretrained = True, freeze_backbone = True):
-    model = models.densenet121(pretrained = pretrained)
+    model = densenet121(weights = DenseNet121_Weights)
     
     if freeze_backbone:
         for param in model.parameters():

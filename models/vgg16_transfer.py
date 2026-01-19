@@ -1,8 +1,8 @@
 import torch.nn as nn
-from torchvision import models 
+from torchvision.models import vgg16, VGG16_Weights
 
 def build_vgg16_transfer(num_classes = 10, pretrained = True, freeze_backbone = True):
-    model = models.vgg16(pretrained = pretrained)
+    model = vgg16(weights = VGG16_Weights)
     
     if freeze_backbone:
         for param in model.parameters():
