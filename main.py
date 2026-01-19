@@ -18,6 +18,7 @@ from models.densenet121_transfer import build_densenet121
 from models.vgg16_manual import VGG16Custom
 
 from utils.train import train_model
+from utils.test import test_model
 from utils.evaluate import evaluate_model
 from utils.plots import plot_confusion_matrix
 from utils.logger import log_test
@@ -84,6 +85,13 @@ def main():
             optimizer=optimizer,
             device=device,
             epochs=exp["epochs"]
+        )
+        
+        test_loss, test_acc = test_model(
+            model=model,
+            test_loader=test_loader,
+            criterion=criterion,
+            device=device
         )
 
         acc, cm = evaluate_model(model, test_loader, device)
