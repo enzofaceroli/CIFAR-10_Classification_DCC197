@@ -12,20 +12,20 @@ def get_cifar10_loaders(batch_size, augment=False):
             transforms.RandomHorizontalFlip(),            
             transforms.RandomCrop(224, padding=4),
             transforms.ToTensor(),
-            transforms.normalize(IMAGENET_MEAN, IMAGENET_STD)
+            transforms.Normalize(IMAGENET_MEAN, IMAGENET_STD)
         ])
     
     else:
         train_transform = transforms.Compose([
             transforms.Resize((224, 224)),
             transforms.ToTensor(),
-            transforms.normalize(IMAGENET_MEAN, IMAGENET_STD)
+            transforms.Normalize(IMAGENET_MEAN, IMAGENET_STD)
         ])
         
     test_transform = transforms.Compose([
         transforms.Resize((224, 224)),
         transforms.ToTensor(),
-        transforms.normalize(IMAGENET_MEAN, IMAGENET_STD)
+        transforms.Normalize(IMAGENET_MEAN, IMAGENET_STD)
     ])
     
     # ========================== DATASETS ==========================
