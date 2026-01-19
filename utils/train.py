@@ -1,4 +1,5 @@
 import torch
+from tqdm import tqdm
 
 def train_model(model, train_loader, criterion, optimizer, device, epochs=10):
     model.to(device)
@@ -10,6 +11,12 @@ def train_model(model, train_loader, criterion, optimizer, device, epochs=10):
         correct = 0
         total = 0
 
+        progress_bar = tqdm(
+            train_loader,
+            desc=f"Epoch {epoch+1}/{epochs}",
+            leave=True
+        )
+        
         for images, labels in train_loader:
             images, labels = images.to(device), labels.to(device)
 
@@ -23,7 +30,13 @@ def train_model(model, train_loader, criterion, optimizer, device, epochs=10):
             _, predicted = outputs.max(1)
             total += labels.size(0)
             correct += predicted.eq(labels).sum().item()
+            
+            progress_bar.set_postfix(
+                loss=f"{loss.item():.4f}",
+                acc=f"{100.0 * correct / total:.2f}%"
+            )
 
+        epoch_loss = running_loss / len(train_loader)
         acc = 100.0 * correct / total
-        print(f"Epoch [{epoch+1}/{epochs}] - Loss: {running_loss:.4f} - Acc: {acc:.2f}%")
+        print(f"Epoch [{epoch+1}/{epochs}] - Loss: {epoch_loss:.4f} - Acc: {acc:.2f}%")
     
