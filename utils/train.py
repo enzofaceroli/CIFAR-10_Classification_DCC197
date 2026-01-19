@@ -11,7 +11,7 @@ def train_model(model, train_loader, criterion, optimizer, device, epochs=10):
         correct = 0
         total = 0
         
-        for batch_idx, (images, labels) in train_loader:
+        for images, labels in train_loader:
             images, labels = images.to(device), labels.to(device)
 
             optimizer.zero_grad()
@@ -24,13 +24,6 @@ def train_model(model, train_loader, criterion, optimizer, device, epochs=10):
             _, predicted = outputs.max(1)
             total += labels.size(0)
             correct += predicted.eq(labels).sum().item()
-            
-            if batch_idx % 100 == 0:
-                print(
-                    f"Epoch [{epoch+1}/{epochs}] "
-                    f"Batch [{batch_idx}/{len(train_loader)}] "
-                    f"Loss: {loss.item():.4f}"
-                )
 
         epoch_loss = running_loss / len(train_loader)
         acc = 100.0 * correct / total
