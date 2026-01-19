@@ -5,6 +5,7 @@ def train_model(model, train_loader, criterion, optimizer, device, epochs=10):
     model.train()
 
     for epoch in range(epochs):
+        print(f"INICIANDO EPOCA {epoch}")
         running_loss = 0.0
         correct = 0
         total = 0
