@@ -13,6 +13,8 @@ from models.vgg16_manual import VGG16Custom
 from utils.train import train_model
 from utils.evaluate import evaluate_model
 from utils.plots import plot_confusion_matrix
+from utils.logger import log_experiment
+import os
 
 
 def get_model(exp_config, num_classes):
@@ -83,6 +85,20 @@ def main():
 
         acc, cm = evaluate_model(model, test_loader, device)
         print(f"Acurácia final: {acc * 100:.2f}%")
+        
+        log_experiment(
+            csv_path="results/experiments_results.csv",
+            data={
+                "experiment_name": exp["name"],
+                "model": exp["model"],
+                "batch_size": exp["batch_size"],
+                "learning_rate": exp["learning_rate"],
+                "epochs": exp["epochs"],
+                "augmentation": exp["augmentation"],
+                "input_size": 224,
+                "accuracy": acc
+            }
+        )
 
         plot_confusion_matrix(
             cm,
