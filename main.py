@@ -37,14 +37,14 @@ def get_model(exp_config, num_classes):
         return build_vgg16_transfer(
             num_classes=num_classes,
             pretrained=True,
-            freeze_features=exp_config["freeze_features"]
+            freeze_backbone=exp_config["freeze_backbone"]
         )
 
     if model_name == "densenet121":
         return build_densenet121(
             num_classes=num_classes,
             pretrained=True,
-            freeze_features=exp_config["freeze_features"]
+            freeze_backbone=exp_config["freeze_backbone"]
         )
 
     if model_name == "vgg16_manual":
