@@ -2,7 +2,7 @@
 
 Este repositório contém o trabalho desenvolvido para a disciplina de Redes Neurais/Visão Computacional. O objetivo foi implementar e analisar o desempenho de diferentes arquiteturas de Redes Neurais Convolucionais (CNNs) na classificação do dataset **CIFAR-10**.
 
-## 🧠 Arquiteturas Implementadas
+## Arquiteturas Implementadas
 
 Foram testados três modelos principais, utilizando tanto implementação manual quanto *Transfer Learning*:
 
@@ -12,7 +12,7 @@ Foram testados três modelos principais, utilizando tanto implementação manual
 
 Os experimentos variaram parâmetros como *Batch Size*, *Learning Rate* e número de épocas.
 
-## 🚀 Como Executar
+## Como Executar
 
 Todo o código foi desenvolvido para rodar diretamente no **Google Colab**, não sendo necessária nenhuma instalação local.
 
@@ -25,7 +25,7 @@ Para executar os testes e visualizar os resultados, acesse o notebook através d
 2. No menu superior do Colab, vá em **Ambiente de execução** > **Alterar o tipo de ambiente de execução** e certifique-se de que a **GPU (T4)** está selecionada.
 3. Clique em **Ambiente de execução** > **Executar tudo** (ou rode as células sequencialmente).
 
-## 🛠️ Tecnologias Utilizadas
+## Tecnologias Utilizadas
 
 * Python 3.10
 * PyTorch & TorchVision
