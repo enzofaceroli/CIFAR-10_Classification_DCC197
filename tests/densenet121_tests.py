@@ -50,7 +50,7 @@ DENSENET121_TESTS = [
 
     # Melhor configuração congelada
     {
-        "name": "densenet121_best_frozen",
+        "name": "densenet121_frozen",
         "model": "densenet121",
         "batch_size": 64,
         "learning_rate": 1e-3,

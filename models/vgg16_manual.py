@@ -52,7 +52,9 @@ class VGG16Custom(nn.Module):
 
         self.classifier = nn.Sequential(
             nn.Flatten(),
-            nn.Linear(512 * 7 * 7, 4096),
+            # 512 * 7 * 7 para imagens 224x224
+            # nn.Linear(512 * 7 * 7, 4096),
+            nn.Linear(512, 4096),
             nn.ReLU(inplace=True),
             nn.Dropout(p=0.5),
             nn.Linear(4096, 4096),

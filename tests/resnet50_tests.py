@@ -50,7 +50,7 @@ RESNET50_TESTS = [
 
     # Melhor configuração com backbone congelado
     {
-        "name": "resnet50_best_frozen",
+        "name": "resnet50_frozen",
         "model": "resnet50",
         "batch_size": 64,
         "learning_rate": 1e-3,

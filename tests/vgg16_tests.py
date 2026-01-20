@@ -50,7 +50,7 @@ VGG16_TESTS = [
 
     # Melhor configuração congelada
     {
-        "name": "vgg16_best_frozen",
+        "name": "vgg16_frozen",
         "model": "vgg16",
         "batch_size": 64,
         "learning_rate": 1e-3,
