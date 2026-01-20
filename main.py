@@ -37,7 +37,6 @@ from utils.train import train_model
 from utils.evaluate import evaluate_model
 from utils.plots import plot_confusion_matrix
 from utils.logger import log_test
-# import os
 
 def get_model(exp_config, num_classes):
     model_name = exp_config["model"]
@@ -67,6 +66,7 @@ def get_model(exp_config, num_classes):
 
 
 def main():
+    # Adiciona a opcao de input no colab (muito utilizada pelos membros durante o desenvolvimento)
     args = parse_args()
     TESTS = TESTS_MAP[args.arch]
     
@@ -78,6 +78,8 @@ def main():
         "dog", "frog", "horse", "ship", "truck"
     ]
 
+    # roda todos os testes 
+    # data loader -> modelo -> otimizador -> treino -> avaliacao -> plots + csv
     for exp in TESTS:
         print("=" * 70)
         print(f"Experimento: {exp['name']}")

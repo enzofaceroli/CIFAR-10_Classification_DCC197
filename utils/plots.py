@@ -1,6 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
+# plota matriz de confusão baseado em evaluate.py
 def plot_confusion_matrix(cm, class_names, save_path=None):
     fig, ax = plt.subplots()
     im = ax.imshow(cm)

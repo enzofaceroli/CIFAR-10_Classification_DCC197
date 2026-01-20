@@ -2,6 +2,7 @@ import torch
 from torchvision import datasets, transforms
 from torch.utils.data import DataLoader
 
+# add opcao de redimensionar ou nao
 IMAGENET_MEAN = [0.485, 0.456, 0.406]
 IMAGENET_STD = [0.229, 0.224, 0.225]
 CIFAR10_MEAN = [0.4914, 0.4822, 0.4465]
@@ -19,6 +20,7 @@ def get_cifar10_loaders(batch_size, augment=False, resize=False):
         crop_size = 32
         base_transforms = []
 
+    # data augmentation
     if augment:
         train_transform = transforms.Compose(base_transforms + [
             transforms.RandomHorizontalFlip(),

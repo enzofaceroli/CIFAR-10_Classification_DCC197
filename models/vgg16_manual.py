@@ -1,7 +1,4 @@
-# models/vgg16_manual.py
-
 import torch.nn as nn
-
 
 class VGG16Custom(nn.Module):
     def __init__(self, num_classes=10):
