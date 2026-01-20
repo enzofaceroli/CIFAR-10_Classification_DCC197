@@ -22,8 +22,10 @@ Para executar os testes e visualizar os resultados, acesse o notebook através d
 
 ### Instruções Rápidas:
 1. Clique no link acima.
-2. No menu superior do Colab, vá em **Ambiente de execução** > **Alterar o tipo de ambiente de execução** e certifique-se de que a **GPU (T4)** está selecionada.
-3. Clique em **Ambiente de execução** > **Executar tudo** (ou rode as células sequencialmente).
+2. No menu superior do Colab crie uma cópia para seu próprio drive.
+3. Em sequência, já na cópia, vá em **Ambiente de execução** > **Alterar o tipo de ambiente de execução** e certifique-se de que a **GPU (T4)** está selecionada.
+4. Na última célula, selecione qual arquitetura **"arch --{nome da arquitetura}"**
+5. Clique em **Ambiente de execução** > **Executar tudo** (ou rode as células sequencialmente).
 
 ## Tecnologias Utilizadas
 
